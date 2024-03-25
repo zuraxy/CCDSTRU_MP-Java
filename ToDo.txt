@@ -1,0 +1,20 @@
+Title of program + logo (Title) + Taskbar logo
+
+Main menu
+	Display
+		Background
+		Buttons+Behavior
+			Play
+			Game mechanics
+			Exit
+
+Play (All containing some kind of background/theme/design)
+	Player1 name + Player2 name
+		non-null + non identical
+
+	Game behavior (tic tac toe)
+		__'s turn
+		place
+		handle storage
+		basta handle game overall + wincondition
+			have retry/exit button
