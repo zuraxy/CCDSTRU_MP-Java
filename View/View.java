@@ -10,11 +10,15 @@ public class View extends JFrame
     public JPanel bottomPanel;
     public JPanel mechanicsPanel;
     public JPanel gamePanel;
+    public JPanel winnerPanel1;
+    public JPanel winnerPanel2;
 
     private JButton playButton;
     private JButton tutorialButton;
     private JButton exitButton;
     private JButton backButton;
+    private JButton backButton1;
+    private JButton backButton2;
     private JButton gridButton[][];
 
     public View()
@@ -41,7 +45,6 @@ public class View extends JFrame
         title.setIcon(picture);
         topPanel.add(title);
         //---------------------------------------------------------------------------------
-
 
 
         //BOTTOM PANEL---------------------------------------------------------------------
@@ -126,15 +129,85 @@ public class View extends JFrame
         }
         //---------------------------------------------------------------------------------
 
+        //WINNER PANEL ONE (1)---------------------------------------------------------------------
+        winnerPanel1 = new JPanel();
+        winnerPanel1.setBounds(0,240,720,480);
+        winnerPanel1.setBackground(new Color(218,227,230));
+        winnerPanel1.setLayout(null);
+        winnerPanel1.setVisible(false);
+
+        //Component 1: Winner Display
+        JLabel winner1 = new JLabel();
+        winner1.setBounds(0,0,720,420);
+        ImageIcon winner1Image = new ImageIcon("C:\\Users\\PC\\Downloads\\player1Win.png");
+        winner1.setIcon(winner1Image);
+
+        //Component 2: Back button
+        backButton1 = new JButton();
+        backButton1.setBounds(310,370,80,80);
+        backButton1.setBackground(new Color(200,209,212));
+        backButton1.setFont(new Font("Comic Sans",Font.BOLD,30));
+        backButton1.setText("\uD83D\uDD1A");
+        backButton1.setFocusable(false);
+
+        //Add the components to the panel
+        winnerPanel1.add(backButton1);
+        winnerPanel1.add(winner1);
+        //---------------------------------------------------------------------------------
+
+        //WINNER PANEL TWO (2)---------------------------------------------------------------------
+        winnerPanel2 = new JPanel();
+        winnerPanel2.setBounds(0,240,720,480);
+        winnerPanel2.setBackground(new Color(218,227,230));
+        winnerPanel2.setLayout(null);
+        winnerPanel2.setVisible(false);
+
+        //Component 2: Winner Display
+        JLabel winner2 = new JLabel();
+        winner2.setBounds(0,0,720,420);
+        ImageIcon winner2Image = new ImageIcon("C:\\Users\\PC\\Downloads\\player1Win.png");
+        winner2.setIcon(winner2Image);
+
+        //Component 2: Back button
+        backButton2 = new JButton();
+        backButton2.setBounds(310,370,80,80);
+        backButton2.setBackground(new Color(200,209,212));
+        backButton2.setFont(new Font("Comic Sans",Font.BOLD,30));
+        backButton2.setText("\uD83D\uDD1A");
+        backButton2.setFocusable(false);
+
+        //Add the components to the panel
+        winnerPanel2.add(backButton2);
+        winnerPanel2.add(winner2);
+        //---------------------------------------------------------------------------------
+
+
         //WHOLE FRAME----------------------------------------------------------------------
         wholeFrame.add(topPanel);
         wholeFrame.add(bottomPanel);
         wholeFrame.add(mechanicsPanel);
         wholeFrame.add(gamePanel);
+        wholeFrame.add(winnerPanel1);
+        wholeFrame.add(winnerPanel2);
         //---------------------------------------------------------------------------------
 
         wholeFrame.setVisible(true);
     }
+
+    //add method for updating board model----------------------------
+    public void updateBoard(int row, int col, boolean next)
+    {
+        if(next==false)
+        {
+            gridButton[row][col].setText("X");
+        }
+        else
+        {
+            gridButton[row][col].setText("O");
+        }
+
+    }
+    //---------------------------------------------------------------
 
     //add methods for button listeners-------------------------------
     public JButton getPlayButton()
@@ -157,6 +230,14 @@ public class View extends JFrame
     {
         return gridButton[row][col]; //listener FIVE (5)
     }
+    public JButton getBackButton1()
+    {
+        return backButton1; //listener FOUR (4)
+    }
+    public JButton getBackButton2()
+    {
+        return backButton2; //listener FOUR (4)
+    }
     //---------------------------------------------------------------------
 
     //add methods for returning panels ------------------------------------
@@ -174,6 +255,14 @@ public class View extends JFrame
     public JPanel getGamePanel()
     {
         return gamePanel;
+    }
+    public JPanel getWinnerPanel1()
+    {
+        return winnerPanel1;
+    }
+    public JPanel getWinnerPanel2()
+    {
+        return winnerPanel2;
     }
     //---------------------------------------------------------------------
 
