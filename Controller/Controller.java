@@ -62,7 +62,7 @@ public class Controller implements MouseListener
                             this.model.checkQ22();
                         }
                         handlePlayerWin();
-                        //this.model.printArray();
+                        this.model.printArray();
 
                     } else if (e.getSource() == view.getPlayButton()) {
                         setBottomPanelVisible(false);

@@ -165,7 +165,7 @@ public class View extends JFrame
         //Component 2: Winner Display
         JLabel winner2 = new JLabel();
         winner2.setBounds(0,0,720,420);
-        ImageIcon winner2Image = new ImageIcon("C:\\Users\\PC\\Downloads\\player1Win.png");
+        ImageIcon winner2Image = new ImageIcon("C:\\Users\\PC\\Downloads\\player2Win.png");
         winner2.setIcon(winner2Image);
 
         //Component 2: Back button

@@ -65,12 +65,12 @@ public class Model
 
     public void checkQ21()
     {
-        if (board[4 - 1][1 - 1] == 'X' && board[4 - 1][3 - 1] == 'X' && board[5 - 1][3 - 1] == 'X' && board[6 - 1][3 - 1] == 'X' && board[6 - 1][3 - 1] == 'X')
+        if (board[4 - 1][1 - 1] == 'X' && board[4 - 1][3 - 1] == 'X' && board[5 - 1][1 - 1] == 'X' && board[5 - 1][3 - 1] == 'X' && board[6 - 1][1 - 1] == 'X' && board[6 - 1][3 - 1] == 'X')
         {
             C1[2] = 21;
             System.out.println("Put to C1. Captured by" + !next);
         }
-        else if (board[4 - 1][1 - 1] == 'O' && board[4 - 1][3 - 1] == 'O' && board[5 - 1][3 - 1] == 'O' && board[6 - 1][1 - 1] == 'O' && board[6 - 1][3 - 1] == 'O')
+        else if (board[4 - 1][1 - 1] == 'O' && board[4 - 1][3 - 1] == 'O' && board[5 - 1][1 - 1] == 'O' && board[5 - 1][3 - 1] == 'O' && board[6 - 1][1 - 1] == 'O' && board[6 - 1][3 - 1] == 'O')
         {
             C2[2] = 21;
             System.out.println("Put to C2. Captured by" + !next);
@@ -94,7 +94,7 @@ public class Model
             System.out.println("Player 1 wins!");
             return 1;
         }
-        else if((C2[0]==11&&C2[3]==22)||(C2[1]==12&&C1[2]==21))
+        else if((C2[0]==11&&C2[3]==22)||(C2[1]==12&&C2[2]==21))
         {
             System.out.println("Player 2 wins!");
             return 2;
@@ -104,6 +104,17 @@ public class Model
 
     public void printArray()
     {
+        System.out.print(C1[0]);
+        System.out.print(C1[1]);
+        System.out.print(C1[2]);
+        System.out.println(C1[3]);
+
+        System.out.print(C2[0]);
+        System.out.print(C2[1]);
+        System.out.print(C2[2]);
+        System.out.println(C2[3]);
+
+        /*
         for(int i=0;i<6;i++)
         {
             for(int j=0;j<6;j++)
@@ -111,7 +122,7 @@ public class Model
                 System.out.print(board[i][j]);
             }
             System.out.println("");
-        }
+        }*/
     }
 
 }
