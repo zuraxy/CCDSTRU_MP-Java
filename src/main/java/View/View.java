@@ -11,6 +11,7 @@ public class View extends JFrame
     public JPanel gamePanel;
     public JPanel winnerPanel1;
     public JPanel winnerPanel2;
+    public JPanel gameOverPanel;
 
     private JButton playButton;
     private JButton tutorialButton;
@@ -18,6 +19,7 @@ public class View extends JFrame
     private JButton backButton;
     private JButton backButton1;
     private JButton backButton2;
+    private JButton backButton3;
     private JButton gridButton[][];
 
     public View()
@@ -138,7 +140,7 @@ public class View extends JFrame
         //Component 1: Winner Display
         JLabel winner1 = new JLabel();
         winner1.setBounds(0,0,720,420);
-        ImageIcon winner1Image = new ImageIcon("C:\\MP\\CaptureTheQuadrants\\src\\main\\resources\\player1Win.png");
+        ImageIcon winner1Image = new ImageIcon("C:\\MP\\CaptureTheQuadrants\\src\\main\\resources\\player2Win.png");
         winner1.setIcon(winner1Image);
 
         //Component 2: Back button
@@ -164,7 +166,7 @@ public class View extends JFrame
         //Component 2: Winner Display
         JLabel winner2 = new JLabel();
         winner2.setBounds(0,0,720,420);
-        ImageIcon winner2Image = new ImageIcon("C:\\MP\\CaptureTheQuadrants\\src\\main\\resources\\player2Win.png");
+        ImageIcon winner2Image = new ImageIcon("C:\\MP\\CaptureTheQuadrants\\src\\main\\resources\\player1Win.png");
         winner2.setIcon(winner2Image);
 
         //Component 2: Back button
@@ -180,6 +182,32 @@ public class View extends JFrame
         winnerPanel2.add(winner2);
         //---------------------------------------------------------------------------------
 
+        //GAME OVER PANEL---------------------------------------------------------------------
+        gameOverPanel = new JPanel();
+        gameOverPanel.setBounds(0,240,720,480);
+        gameOverPanel.setBackground(new Color(218,227,230));
+        gameOverPanel.setLayout(null);
+        gameOverPanel.setVisible(false);
+
+        //Component 1: Gameover Display
+        JLabel gameOver = new JLabel();
+        gameOver.setBounds(0,0,720,420);
+        ImageIcon gameOverImage = new ImageIcon("C:\\MP\\CaptureTheQuadrants\\src\\main\\resources\\GameOver.png");
+        gameOver.setIcon(gameOverImage);
+
+        //Component 2: Back button
+        backButton3 = new JButton();
+        backButton3.setBounds(310,370,80,80);
+        backButton3.setBackground(new Color(200,209,212));
+        backButton3.setFont(new Font("Comic Sans",Font.BOLD,30));
+        backButton3.setText("\uD83D\uDD1A");
+        backButton3.setFocusable(false);
+
+        //Add the components to the panel
+        gameOverPanel.add(backButton3);
+        gameOverPanel.add(gameOver);
+        //---------------------------------------------------------------------------------
+
 
         //WHOLE FRAME----------------------------------------------------------------------
         wholeFrame.add(topPanel);
@@ -188,6 +216,7 @@ public class View extends JFrame
         wholeFrame.add(gamePanel);
         wholeFrame.add(winnerPanel1);
         wholeFrame.add(winnerPanel2);
+        wholeFrame.add(gameOverPanel);
         //---------------------------------------------------------------------------------
 
         wholeFrame.setVisible(true);
@@ -237,6 +266,10 @@ public class View extends JFrame
     {
         return backButton2; //listener FOUR (4)
     }
+    public JButton getBackButton3()
+    {
+        return backButton3; //listener FOUR (4)
+    }
     //---------------------------------------------------------------------
 
     //add methods for returning panels ------------------------------------
@@ -262,6 +295,10 @@ public class View extends JFrame
     public JPanel getWinnerPanel2()
     {
         return winnerPanel2;
+    }
+    public JPanel getGameOverPanel()
+    {
+        return gameOverPanel;
     }
     //---------------------------------------------------------------------
 
