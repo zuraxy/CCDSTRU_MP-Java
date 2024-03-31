@@ -38,17 +38,16 @@ public class Controller implements MouseListener
                     if (e.getSource() == view.getGridButton(row, col)) {
                         //SET NEW DISPLAY
 
-                        //SET NEW ARRAY IN BOARD
+                        //AS LONG AS BUTTONS ARE ENABLED
                         if(this.view.getGridButton(row,col).isEnabled())
                         {
                             this.view.updateBoard(row, col, this.model.getNext());
+                            this.model.systemFacts();
+                            this.model.NextPlayerMove(row+1,col+1);
+                            this.model.GameOver();
+                            this.model.systemFacts();
                         }
                         this.view.getGridButton(row, col).setEnabled(false);
-
-                        this.model.systemFacts();
-                        this.model.NextPlayerMove(row+1,col+1);
-                        this.model.GameOver();
-                        this.model.systemFacts();
 
                         if(this.model.over==true)
                         {

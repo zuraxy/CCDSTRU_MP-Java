@@ -18,7 +18,6 @@ public class Model {
     Set<Integer> F3;
 
     //declare other elements that will be utilized
-
     public void initializeF()
     {
         for(int i=1;i<=6;i++)
